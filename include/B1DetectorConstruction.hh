@@ -58,7 +58,7 @@ class B1DetectorConstruction : public G4VUserDetectorConstruction
 
   public:
     void PrintParameter(G4String message) {
-      G4cout << message << ": " << std::setprecision(9) << fParameter << G4endl;
+      G4cout << message << ": " << std::setprecision(15) << fParameter << G4endl;
     }
     void SetParameter(G4double parameter) {
       fParameter = parameter;
