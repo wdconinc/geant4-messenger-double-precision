@@ -1,0 +1,11 @@
+# Initialize kernel
+/run/initialize
+
+# Silence
+/control/verbose 0
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+
+# Set parameter
+/B1/set 100 deg

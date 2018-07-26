@@ -34,8 +34,11 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
 
+#include <iomanip>
+
 class G4VPhysicalVolume;
 class G4LogicalVolume;
+class G4GenericMessenger;
 
 /// Detector construction class to define materials and geometry.
 
@@ -48,6 +51,17 @@ class B1DetectorConstruction : public G4VUserDetectorConstruction
     virtual G4VPhysicalVolume* Construct();
     
     G4LogicalVolume* GetScoringVolume() const { return fScoringVolume; }
+
+  private:
+    G4GenericMessenger* fMessenger;
+    G4double fParameter;
+
+  public:
+    void SetParameter(G4double parameter) {
+      G4cout << "before " << std::setprecision(9) << fParameter << G4endl;
+      fParameter = parameter;
+      G4cout << "after " << std::setprecision(9) << fParameter << G4endl;
+    }
 
   protected:
     G4LogicalVolume*  fScoringVolume;

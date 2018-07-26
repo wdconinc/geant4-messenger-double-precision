@@ -40,18 +40,25 @@
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4GenericMessenger.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B1DetectorConstruction::B1DetectorConstruction()
 : G4VUserDetectorConstruction(),
   fScoringVolume(0)
-{ }
+{
+  fParameter = 100.0*deg;
+  fMessenger = new G4GenericMessenger(this,"/B1/","B1 properties");
+  fMessenger->DeclareMethodWithUnit("set","deg",&B1DetectorConstruction::SetParameter,"Set parameter");
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B1DetectorConstruction::~B1DetectorConstruction()
-{ }
+{
+  delete fMessenger;
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
