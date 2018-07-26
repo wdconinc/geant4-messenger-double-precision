@@ -1,0 +1,32 @@
+#ignore libraries and helper files
+*.so
+*.d
+
+#ignore output files
+*.root
+*.out
+*.pdf
+
+#ignore kdev files
+*.kdev4
+
+#install directories
+bin
+lib
+share
+
+#ignore build and map directory
+build*
+
+#ignore log files directory
+log
+
+#ignore project files for eclipse
+.cproject
+.project
+
+#ignore dot files
+*.dot
+
+#ignore log files
+*.log
