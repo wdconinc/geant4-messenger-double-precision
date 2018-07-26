@@ -50,7 +50,11 @@ B1DetectorConstruction::B1DetectorConstruction()
 {
   fParameter = 100.0*deg;
   fMessenger = new G4GenericMessenger(this,"/B1/","B1 properties");
-  fMessenger->DeclareMethodWithUnit("set","deg",&B1DetectorConstruction::SetParameter,"Set parameter");
+  fMessenger->DeclareMethod("print",&B1DetectorConstruction::PrintParameter,"Print parameter");
+  fMessenger->DeclarePropertyWithUnit("setPU","deg",fParameter,"Set parameter");
+  fMessenger->DeclareProperty("setP",fParameter,"Set parameter");
+  fMessenger->DeclareMethodWithUnit("setMU","deg",&B1DetectorConstruction::SetParameter,"Set parameter");
+  fMessenger->DeclareMethod("setM",&B1DetectorConstruction::SetParameter,"Set parameter");
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -8,4 +8,18 @@
 /tracking/verbose 0
 
 # Set parameter
-/B1/set 100 deg
+/B1/print before_/B1/setPU_100_deg
+/B1/setPU 100 deg
+/B1/print after_/B1/setPU_100_deg
+
+/B1/print before_/B1/setP_1.12345678901234567890
+/B1/setP 1.12345678901234567890
+/B1/print after_/B1/setP_1.12345678901234567890
+
+/B1/print before_/B1/setMU_100_deg
+/B1/setMU 100 deg
+/B1/print after_/B1/setMU_100_deg
+
+/B1/print before_/B1/setM_1.12345678901234567890
+/B1/setM 1.12345678901234567890
+/B1/print after_/B1/setM_1.12345678901234567890
